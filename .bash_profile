@@ -43,3 +43,9 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
 source ~/.git-completion.bash
+
+# Customize prompt
+if [ -n "$PS1" ]; then PS1='\h:\w \u\$ '; fi
+
+export TERM=xterm-color
+export CLICOLOR=YES
