@@ -50,3 +50,5 @@ export RESET
 export PS1="${BOLD}${MAGENTA}\u@\h:${BLUE}\w\[$RESET\]$ "
 
 export PS2="\[$MAGENTA\]→ \[$RESET\]"
+
+export SUDO_PS1="${BOLD}[\u@\h] ${BLUE}\w\[$RESET\]\$ "
