@@ -30,3 +30,7 @@
 (global-set-key [C-S-left] 'shift-left)
 
 ;; </INDENTING TEXT>
+
+
+; Whenever we're in text mode, automatically break lines at right margin.
+(setq text-mode-hook 'turn-on-auto-fill)
