@@ -47,8 +47,10 @@ export BLUE
 export BOLD
 export RESET
 
-export PS1="${BOLD}${MAGENTA}\u@\h:${BLUE}\w\[$RESET\]$ "
+if (( $UID == 0)); then
+    export PS1="${BOLD}[\u@\h] ${BLUE}\w\[$RESET\]# "
+else
+    export PS1="${BOLD}${MAGENTA}\u@\h:${BLUE}\w\[$RESET\]$ "
+fi
 
 export PS2="\[$MAGENTA\]→ \[$RESET\]"
-
-export SUDO_PS1="${BOLD}[\u@\h] ${BLUE}\w\[$RESET\]\$ "
