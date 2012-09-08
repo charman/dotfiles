@@ -513,6 +513,19 @@ defaults write com.twitter.twitter-mac ShowFullNames -bool true
 # Hide the app in the background if it’s not the front-most window
 defaults write com.twitter.twitter-mac HideInBackground -bool true
 
+
+###############################################################################
+# Miscellaneous Craig customizations                                          #
+###############################################################################
+
+#  Create a symbolic link to the OS X 'airport' command.  Try the '--scan' or '--getinfo' flags.
+if [[ ! -e /usr/local/bin/airport ]]; then
+    sudo ln -s \
+	/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport \
+	/usr/local/bin/airport
+fi
+
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
