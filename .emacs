@@ -34,3 +34,15 @@
 
 ; Whenever we're in text mode, automatically break lines at right margin.
 (setq text-mode-hook 'turn-on-auto-fill)
+
+
+(cond
+ ((= 22 emacs-major-version)
+  ;;  Use personal copy of ruby-mode when using Emacs 22 (e.g. on OS X)
+  ;;  ruby-mode is included in Emacs 23
+  ;;  For more info, see:
+  ;;    http://www.emacswiki.org/emacs/RubyMode
+  (load-file "~/.emacs.d/ruby-mode/ruby-mode.el")
+  (autoload 'ruby-mode "ruby-mode" "Major mode for ruby files" t)
+  (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+  (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))))
