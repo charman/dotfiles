@@ -525,6 +525,13 @@ if [[ ! -e /usr/local/bin/airport ]]; then
 	/usr/local/bin/airport
 fi
 
+#  Create a symbolic link to JavaScript command line console.
+if [[ ! -e /usr/local/bin/jsc ]]; then
+    sudo ln -s \
+	/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc \
+	/usr/local/bin/jsc
+fi
+
 
 ###############################################################################
 # Kill affected applications                                                  #
