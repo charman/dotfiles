@@ -47,3 +47,7 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
 source ~/.git-completion.bash
+
+# Configuration file for interactive Python sessions
+#   http://docs.python.org/using/cmdline.html#envvar-PYTHONSTARTUP
+export PYTHONSTARTUP=$HOME/.pythonrc

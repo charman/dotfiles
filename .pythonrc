@@ -1,0 +1,7 @@
+#  This file is used for interactive Python sessions because of this .bash_profile command:
+#    export PYTHONSTARTUP=$HOME/.pythonrc
+
+#  If you need to do integer division, use //
+from __future__ import division
+
+from math import *
