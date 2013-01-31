@@ -71,8 +71,6 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 ```bash
 ./.osx
 ```
-<<<<<<< HEAD
-=======
 
 ### Install Homebrew formulae
 
@@ -100,4 +98,3 @@ Suggestions/improvements
 * [Lauri ‘Lri’ Ranta](http://lri.me/) for sharing [loads of hidden preferences](http://lri.me/osx.html#hidden-preferences)
 * [Tim Esselens](http://devel.datif.be/)
 * anyone who [contributed a patch](https://github.com/mathiasbynens/dotfiles/contributors) or [made a helpful suggestion](https://github.com/mathiasbynens/dotfiles/issues)
->>>>>>> 2e42495c265b83539996112a1512f0fad7ab9940
