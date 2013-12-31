@@ -47,3 +47,7 @@ source ~/.git-completion.bash
 # Configuration file for interactive Python sessions
 #   http://docs.python.org/using/cmdline.html#envvar-PYTHONSTARTUP
 export PYTHONSTARTUP=$HOME/.pythonrc
+
+# Set default encoding Python output for stdout/stderr to UTF-8
+# Prevents Python errors about "UnicodeEncodeError: 'ascii' codec can't encode character u'\uXYZ'"
+export PYTHONIOENCODING="utf-8"
