@@ -1,2 +1,12 @@
 # Disable the startup message
 startup_message off
+
+# Redefine screen command key as Control-^ instead of Control-a
+# Per http://www.emacswiki.org/emacs/GnuScreen:
+#   Control-^ (usually Control-Shift-6) is traditional and the only key not used by emacs
+escape ^^^^
+
+# Use the mouse to scroll through the scrollback buffer:
+#   http://stackoverflow.com/questions/359109/using-the-scrollwheel-in-gnu-screen
+defscrollback 10000
+termcapinfo xterm* ti@:te@
