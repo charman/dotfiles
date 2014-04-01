@@ -32,7 +32,7 @@
 ;; </INDENTING TEXT>
 
 
-; Whenever we're in text mode, automatically break lines at right margin.
+;; Whenever we're in text mode, automatically break lines at right margin.
 (setq text-mode-hook 'turn-on-auto-fill)
 
 
@@ -85,3 +85,24 @@
 ;; Disable auto-save and backups for SVN commit files
 (setq auto-mode-alist 
       (append '(("svn-commit\\.tmp$" . sensitive-mode)) auto-mode-alist))
+
+
+;; web-mode provides support for editing HTML/JavaScript/CSS/Django
+;;   http://web-mode.org
+(load-file "~/.emacs.d/web-mode.el")
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+
+  ;; Use spaces instead of tabs
+  (setq-default indent-tabs-mode nil)
+
+  ;; Delete trailing whitespace when saving files
+  (add-hook 'local-write-file-hooks
+            (lambda ()
+              (delete-trailing-whitespace)
+              nil))
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
