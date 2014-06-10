@@ -106,3 +106,6 @@
               nil))
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
+(add-hook 'js-mode-hook 'my-web-mode-hook)
+
+(setq js-indent-level 2)
