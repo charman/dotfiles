@@ -108,4 +108,10 @@
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 (add-hook 'js-mode-hook 'my-web-mode-hook)
 
-(setq js-indent-level 2)
+(setq web-mode-code-indent-offset 4)
+(setq web-mode-css-indent-offset 4)
+(setq web-mode-markup-indent-offset 4)
+(setq web-mode-script-padding 0)
+(setq web-mode-style-padding 0)
+
+(setq js-indent-level 4)
