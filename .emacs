@@ -26,6 +26,15 @@
 ;; column to the right, Ctrl-Shift-Left Arrow moves selected text one
 ;; column to the left:
 
+;; When using macOS's Terminal program, the C-S-right and C-S-left
+;; key-combinations are not being recognized - though they are
+;; recognized when using the Carbon-native version of emacs.
+;; In order to use C-S-right/left with the macOS Terminal program,
+;; I went into Terminal Preferences (under Profiles / Keyboard)
+;; and configured Terminal to send the keycodes below.
+(define-key input-decode-map "\e[1;6C" [C-S-right])
+(define-key input-decode-map "\e[1;6D" [C-S-left])
+
 (global-set-key [C-S-right] 'shift-right)
 (global-set-key [C-S-left] 'shift-left)
 
