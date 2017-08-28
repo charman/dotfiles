@@ -1,3 +1,0 @@
-#!/bin/bash
-curl http://roc.cs.rochester.edu/whatismyip.php
-echo ''
