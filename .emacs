@@ -121,3 +121,9 @@
 (setq web-mode-style-padding 0)
 
 (setq js-indent-level 2)
+
+
+;; Markdown Mode - use GitHub flavored Markdown (gfm) for all .MD files
+(autoload 'gfm-mode "markdown-mode"
+   "Major mode for editing GitHub Flavored Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
