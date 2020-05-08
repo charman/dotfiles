@@ -1,0 +1,2 @@
+--ignore-dir=.tox
+--type-set=docker:is:Dockerfile
