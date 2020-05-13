@@ -45,45 +45,6 @@
 (setq text-mode-hook 'turn-on-auto-fill)
 
 
-;;  Create minor-mode that disables backups and auto-saving
-;;  
-;;  Source:
-;;    http://anirudhsasikumar.net/blog/2005.01.21.html
-
-(define-minor-mode sensitive-mode
-  "For sensitive files like password lists.
-   It disables backup creation and auto saving.
-
-   With no argument, this command toggles the mode.
-   Non-null prefix argument turns on the mode.
-   Null prefix argument turns off the mode."
-
-  ;; The initial value.
-  nil
-
-  ;; The indicator for the mode line.
-  " Sensitive"
-
-  ;; The minor mode bindings.
-  nil
-  (if (symbol-value sensitive-mode)
-      (progn
-	;; disable backups
-	(set (make-local-variable 'backup-inhibited) t)
-	;; disable auto-save
-	(if auto-save-default
-	        (auto-save-mode -1)))
-    ;resort to default value of backup-inhibited
-    (kill-local-variable 'backup-inhibited)
-    ;resort to default auto save setting
-    (if auto-save-default
-	(auto-save-mode 1))))
-
-;; Disable auto-save and backups for SVN commit files
-(setq auto-mode-alist 
-      (append '(("svn-commit\\.tmp$" . sensitive-mode)) auto-mode-alist))
-
-
 ;; web-mode provides support for editing HTML/JavaScript/CSS/Django
 ;;   http://web-mode.org
 (load-file "~/.emacs.d/web-mode.el")
@@ -127,3 +88,12 @@
 (autoload 'gfm-mode "markdown-mode"
    "Major mode for editing GitHub Flavored Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
+
+
+;; Highlight trailing whitespace
+(load-file "~/.emacs.d/highlight-chars.el")
+(require 'highlight-chars)
+
+(add-hook 'python-mode-hook 'hc-highlight-trailing-whitespace)
+(add-hook 'markdown-mode 'hc-highlight-trailing-whitespace)
+
